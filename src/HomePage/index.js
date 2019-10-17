@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Flex from "components/Flex";
 import Hero from "assets/images/hero.svg";
+import HeaderBG from "components/HeaderBG";
 
 const Header = styled.header`
   /* background: #cccccc; */
@@ -36,6 +37,7 @@ function HomePage() {
   return (
     <>
       <Header>
+        <HeaderBG />
         <IntroContainer>
           <Flex justify="space-between">
             <div>
