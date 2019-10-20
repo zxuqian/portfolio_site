@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Flex from "components/Flex";
 import Hero from "assets/images/hero.svg";
 import HeaderBG from "components/HeaderBG";
+import Projects from "./Projects";
 
 const Header = styled.header`
   /* background: #cccccc; */
@@ -11,14 +12,18 @@ const Header = styled.header`
   padding: 24px 10vh;
 `;
 
-const IntroContainer = styled.div`
+const IntroContainer = styled(Flex)`
   width: 100%;
   height: 100%;
-  background-image: url(${Hero});
-  background-repeat: no-repeat;
-  background-position: 100% 20%;
-  background-size: 60%;
-  opacity: 1;
+  justify-content: center;
+`;
+
+const HeadLine = styled.h1`
+  color: #fff;
+`;
+
+const Emphasize = styled.strong`
+  color: ${props => props.theme.main.primary};
 `;
 
 const LogoText = styled.h1`
@@ -39,25 +44,25 @@ function HomePage() {
       <Header>
         <HeaderBG />
         <IntroContainer>
-          <Flex justify="space-between">
-            <div>
-              <LogoText>张旭乾</LogoText>
-              <p>前端工程师</p>
-            </div>
-
+          {/* <Flex justify="space-between">
             <nav>
               <ul>
                 <MenuItem>首页</MenuItem>
                 <MenuItem>简历</MenuItem>
               </ul>
             </nav>
+          </Flex> */}
+          <Flex align="center" justify="center" d="column">
+            <HeadLine>
+              我是<Emphasize>张旭乾</Emphasize>，我是一名前端工程师。
+            </HeadLine>
+            <HeadLine>我可以做基于React生态的项目开发，</HeadLine>
+            <HeadLine>以及网站、APP、小程序的设计与实现。</HeadLine>
           </Flex>
-          <h1>你好，我是张旭乾，我是一名前端工程师</h1>
-          <h1>专注于网站内容开发</h1>
         </IntroContainer>
       </Header>
       <section>
-        <div>jumbtro</div>
+        <Projects />
       </section>
       <section>portfolios</section>
       <footer>footer</footer>

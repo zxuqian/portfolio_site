@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "isotope-layout": "^3.0.6",
     "pts": "^0.8.9",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
