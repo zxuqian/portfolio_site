@@ -4,6 +4,8 @@ import Isotope from "isotope-layout";
 import Flex from "components/Flex";
 import styled from "styled-components";
 import FilterBar from "components/FilterBar";
+import HoverableCard from "components/HoverableCard";
+import projects from "data/projects";
 
 function Projects() {
   const projectsRef = useRef(null);
@@ -34,46 +36,18 @@ function Projects() {
   return (
     <>
       {/* project filter buttons */}
-
       <FilterBar onFilter={onFilter} />
       <ProjectsContainer ref={projectsRef} justify="center">
-        <div className="project-item p1">
-          <div>
-            <ThumbNail>
-              <div>aabb</div>
-            </ThumbNail>
-          </div>
-        </div>
-        <div className="project-item p2">
-          <div>
-            <ThumbNail />
-            <div>aabb</div>
-          </div>
-        </div>
-        <div className="project-item p2">
-          <div>
-            <ThumbNail />
-            <div>aabb</div>
-          </div>
-        </div>
-        <div className="project-item p1">
-          <div>
-            <ThumbNail />
-            <div>aabb</div>
-          </div>
-        </div>
-        <div className="project-item p2">
-          <div>
-            <ThumbNail />
-            <div>aabb</div>
-          </div>
-        </div>
-        <div className="project-item p2">
-          <div>
-            <ThumbNail />
-            <div>aabb</div>
-          </div>
-        </div>
+        {projects.map(project => {
+          return (
+            <div className={`project-item ${project.category.join(" ")}`}>
+              <HoverableCard
+                title={project.title}
+                description={project.description}
+              />
+            </div>
+          );
+        })}
       </ProjectsContainer>
     </>
   );
@@ -84,12 +58,6 @@ const ProjectsContainer = styled(Flex)`
   max-width: 1240px;
   width: 100%;
   flex-wrap: wrap;
-`;
-
-const ThumbNail = styled.div`
-  width: 400px;
-  height: 300px;
-  background: #cccccc;
 `;
 
 export default Projects;

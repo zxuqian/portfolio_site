@@ -4,10 +4,10 @@ import styled from "styled-components";
 import { useFilterBar } from "./hooks";
 
 const filters = [
-  { name: "所有", value: ".p1" },
-  { name: "前端", value: ".p1" },
-  { name: "后端", value: ".p2" },
-  { name: "移动端", value: ".p2" }
+  { name: "所有", value: "*" },
+  { name: "前端", value: ".frontend" },
+  { name: "后端", value: ".backend" },
+  { name: "移动端", value: ".mobile" }
 ];
 
 function FilterBar({ children, onFilter, ...rest }) {
