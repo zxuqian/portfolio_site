@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import styled, { ThemeContext } from "styled-components";
 import { CanvasSpace, Pt, Group, Num, Create, Line } from "pts";
 
-const StyledHeaderBG = styled.canvas`
+const StyledHeaderBG = styled.div`
   position: absolute;
-  z-index: -50;
+  /* z-index: -1; */
   left: 0;
   top: 0;
   right: 0;
-  bottom: 0;
+  height: 100vh;
+  width: 100vw;
 `;
 
 function HeaderBG({ ...rest }) {
@@ -19,7 +20,7 @@ function HeaderBG({ ...rest }) {
   useEffect(() => {
     if (canvasRef.current) {
       let space = new CanvasSpace(canvasRef.current);
-      space.setup({ bgcolor: theme.main.dark, retina: true, resize: true });
+      space.setup({ bgcolor: "#123", retina: true, resize: true });
 
       let form = space.getForm();
 
@@ -95,7 +96,11 @@ function HeaderBG({ ...rest }) {
     }
   }, [canvasRef, theme.main.dark]);
 
-  return <StyledHeaderBG ref={canvasRef} {...rest}></StyledHeaderBG>;
+  return (
+    <StyledHeaderBG>
+      <canvas ref={canvasRef} {...rest}></canvas>
+    </StyledHeaderBG>
+  );
 }
 
 HeaderBG.propTypes = {};

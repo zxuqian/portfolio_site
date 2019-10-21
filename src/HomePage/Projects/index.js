@@ -1,6 +1,9 @@
 import React, { Component, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import Isotope from "isotope-layout";
+import Flex from "components/Flex";
+import styled from "styled-components";
+import FilterBar from "components/FilterBar";
 
 function Projects() {
   const projectsRef = useRef(null);
@@ -31,14 +34,62 @@ function Projects() {
   return (
     <>
       {/* project filter buttons */}
-      <button onClick={onFilter.bind(null, ".p1")}>1</button>
-      <button onClick={onFilter.bind(null, ".p2")}>2</button>
-      <div ref={projectsRef}>
-        <div className="project-item p1">abc</div>
-        <div className="project-item p2">efg</div>
-      </div>
+
+      <FilterBar onFilter={onFilter} />
+      <ProjectsContainer ref={projectsRef} justify="center">
+        <div className="project-item p1">
+          <div>
+            <ThumbNail>
+              <div>aabb</div>
+            </ThumbNail>
+          </div>
+        </div>
+        <div className="project-item p2">
+          <div>
+            <ThumbNail />
+            <div>aabb</div>
+          </div>
+        </div>
+        <div className="project-item p2">
+          <div>
+            <ThumbNail />
+            <div>aabb</div>
+          </div>
+        </div>
+        <div className="project-item p1">
+          <div>
+            <ThumbNail />
+            <div>aabb</div>
+          </div>
+        </div>
+        <div className="project-item p2">
+          <div>
+            <ThumbNail />
+            <div>aabb</div>
+          </div>
+        </div>
+        <div className="project-item p2">
+          <div>
+            <ThumbNail />
+            <div>aabb</div>
+          </div>
+        </div>
+      </ProjectsContainer>
     </>
   );
 }
+
+const ProjectsContainer = styled(Flex)`
+  margin-top: 24px;
+  max-width: 1240px;
+  width: 100%;
+  flex-wrap: wrap;
+`;
+
+const ThumbNail = styled.div`
+  width: 400px;
+  height: 300px;
+  background: #cccccc;
+`;
 
 export default Projects;

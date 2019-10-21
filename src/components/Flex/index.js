@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import View from "components/View";
 
-const StyledFlex = styled.div`
+const StyledFlex = styled(View)`
   display: flex;
   flex: ${props => props.flex || "initial"};
   align-items: ${props => props.align || "stretch"};
@@ -9,12 +10,19 @@ const StyledFlex = styled.div`
   flex-direction: ${props => props.d || "row"};
 `;
 
-function Flex({ children, flex, align, justify, d, ...rest }) {
+function Flex({ children, flex, align, justify, d, ...rest }, ref) {
   return (
-    <StyledFlex flex={flex} align={align} justify={justify} d={d} {...rest}>
+    <StyledFlex
+      ref={ref}
+      flex={flex}
+      align={align}
+      justify={justify}
+      d={d}
+      {...rest}
+    >
       {children}
     </StyledFlex>
   );
 }
 
-export default Flex;
+export default React.forwardRef(Flex);
