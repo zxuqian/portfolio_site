@@ -6,6 +6,7 @@ import styled from "styled-components";
 import FilterBar from "components/FilterBar";
 import HoverableCard from "components/HoverableCard";
 import projects from "data/projects";
+import Carousel from "components/Carousel";
 
 function Projects() {
   const projectsRef = useRef(null);
@@ -40,11 +41,16 @@ function Projects() {
       <ProjectsContainer ref={projectsRef} justify="center">
         {projects.map(project => {
           return (
-            <div className={`project-item ${project.category.join(" ")}`}>
+            <div
+              key={project.id}
+              className={`project-item ${project.category.join(" ")}`}
+            >
               <HoverableCard
                 title={project.title}
                 description={project.description}
-              />
+              >
+                <Carousel />
+              </HoverableCard>
             </div>
           );
         })}

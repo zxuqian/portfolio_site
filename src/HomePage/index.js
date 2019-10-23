@@ -71,7 +71,7 @@ function HomePage() {
           <Projects />
         </Flex>
       </section>
-      <section>portfolios</section>
+      <section>简历</section>
       <footer>footer</footer>
     </>
   );

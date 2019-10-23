@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Flex from "components/Flex";
+import Modal from "react-modal";
 
-function HoverableCard({ title, description }) {
+function HoverableCard({ title, description, children }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const hideModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
       <ThumbNail>
@@ -12,10 +23,16 @@ function HoverableCard({ title, description }) {
             <h3>{title}</h3>
             <p>{description}</p>
           </Title>
-
-          <button>查看详情</button>
+          <button onClick={openModal}>查看详情</button>
         </ThumbNailAction>
       </ThumbNail>
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={hideModal}
+        style={modalStyles}
+      >
+        {children}
+      </Modal>
     </div>
   );
 }
@@ -79,6 +96,16 @@ const ThumbNailAction = styled(Flex)`
     }
   }
 `;
+
+const modalStyles = {
+  content: {
+    background: "none",
+    border: "none"
+  },
+  overlay: {
+    background: "rgba(0, 0, 0, 0.9)"
+  }
+};
 
 HoverableCard.propTypes = {};
 
