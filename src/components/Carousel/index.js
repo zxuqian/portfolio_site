@@ -8,10 +8,11 @@ import Sample from "assets/images/sample.jpeg";
 function Carousel({ children, ...rest }) {
   const settings = {
     dots: true,
+    // arrows: false,
     dotsClass: "slick-dots slick-thumb",
-    customPaging: i => {
-      return <img src={Sample} />;
-    },
+    // customPaging: i => {
+    //   return <img src={Sample} />;
+    // },
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -36,7 +37,16 @@ function Carousel({ children, ...rest }) {
         </div>
 
         <Description>
-          这是项目描述这是项目描述这是项目描述这是项目描述这是项目描述这是项目描述这是项目描述这是项目描述这是项目描述这是项目描述这是项目描述
+          <h1>鹰眼投研</h1>
+          <p>
+            基于React + Apollo GraphQL + Redux + Ant design + Echarts +
+            Socket.io的大型前端项目
+          </p>
+          <p>
+            这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介
+            这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介
+            这是简介这是简介这是简介这是简介这是简介这是简介这是简介
+          </p>
         </Description>
       </Flex>
     </Flex>
@@ -44,7 +54,7 @@ function Carousel({ children, ...rest }) {
 }
 
 const Description = styled.div`
-  color: #fff;
+  /* color: #fff; */
   margin-left: 150px;
 `;
 

@@ -5,6 +5,7 @@ import Hero from "assets/images/hero.svg";
 import HeaderBG from "components/HeaderBG";
 import Projects from "./Projects";
 import SectionHeading from "components/SectionHeading";
+import Experiences from "./Experiences";
 
 const Header = styled(Flex)`
   /* background: #cccccc; */
@@ -66,12 +67,15 @@ function HomePage() {
         </IntroContainer>
       </Header>
       <section>
-        <Flex d="column" align="center">
+        {/* <Flex d="column" align="center"> */}
           <SectionHeading>作品</SectionHeading>
           <Projects />
-        </Flex>
+        {/* </Flex> */}
       </section>
-      <section>简历</section>
+      <section>
+        <SectionHeading>经历</SectionHeading>
+        <Experiences/>
+      </section>
       <footer>footer</footer>
     </>
   );
