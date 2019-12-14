@@ -8,6 +8,44 @@ import SectionHeading from "components/SectionHeading";
 import Experiences from "./Experiences";
 import Footer from "./Footer";
 
+function HomePage() {
+  return (
+    <>
+      <Header>
+        <HeaderBG />
+        <IntroContainer>
+          {/* <Flex justify="space-between">
+            <nav>
+              <ul>
+                <MenuItem>首页</MenuItem>
+                <MenuItem>简历</MenuItem>
+              </ul>
+            </nav>
+          </Flex> */}
+          {/* <Flex align="center" justify="center" d="column"> */}
+          <HeadLine>
+            我是<Emphasize> 张旭乾，</Emphasize>
+            &lt;前端工程师 /&gt; ，擅长基于 React
+            生态的项目开发，勇于提升，乐于求知。
+          </HeadLine>
+          {/* </Flex> */}
+        </IntroContainer>
+      </Header>
+      <section>
+        {/* <Flex d="column" align="center"> */}
+        <SectionHeading>作品</SectionHeading>
+        <Projects />
+        {/* </Flex> */}
+      </section>
+      <section>
+        <SectionHeading>经历</SectionHeading>
+        <Experiences />
+      </section>
+      <Footer />
+    </>
+  );
+}
+
 const Header = styled(Flex)`
   /* background: #cccccc; */
   height: 100vh;
@@ -15,6 +53,8 @@ const Header = styled(Flex)`
   padding: 24px 10vh;
   position: relative;
   align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
 `;
 
 const IntroContainer = styled.div`
@@ -24,8 +64,10 @@ const IntroContainer = styled.div`
 
 const HeadLine = styled.h1`
   color: #fff;
-  width: 60%;
+  /* width: 60%; */
+  /* padding: 0 20%; */
   line-height: 1.5em;
+  text-align: center;
 `;
 
 const Emphasize = styled.strong`
@@ -43,43 +85,5 @@ const MenuItem = styled.li`
     margin-right: 24px;
   }
 `;
-
-function HomePage() {
-  return (
-    <>
-      <Header>
-        <HeaderBG />
-        <IntroContainer>
-          {/* <Flex justify="space-between">
-            <nav>
-              <ul>
-                <MenuItem>首页</MenuItem>
-                <MenuItem>简历</MenuItem>
-              </ul>
-            </nav>
-          </Flex> */}
-          <Flex align="center" justify="center" d="column">
-            <HeadLine>
-              我是<Emphasize> 张旭乾，</Emphasize>
-              &lt;前端工程师 /&gt;
-              ，我可以做基于React生态的项目开发，以及网站、APP、小程序的设计与实现。
-            </HeadLine>
-          </Flex>
-        </IntroContainer>
-      </Header>
-      <section>
-        {/* <Flex d="column" align="center"> */}
-        <SectionHeading>作品</SectionHeading>
-        <Projects />
-        {/* </Flex> */}
-      </section>
-      <section>
-        <SectionHeading>经历</SectionHeading>
-        <Experiences />
-      </section>
-      <Footer />
-    </>
-  );
-}
 
 export default HomePage;
