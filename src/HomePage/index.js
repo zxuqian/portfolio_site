@@ -24,10 +24,11 @@ function HomePage() {
           </Flex> */}
           {/* <Flex align="center" justify="center" d="column"> */}
           <HeadLine>
-            我是<Emphasize> 张旭乾，</Emphasize>
-            &lt;前端工程师 /&gt; ，擅长基于 React
-            生态的项目开发，勇于提升，乐于求知。
+            我是<Emphasize> 张旭乾</Emphasize>
           </HeadLine>
+          <HeadLine>&lt;前端工程师 /&gt;</HeadLine>
+          <HeadLine>擅长基于React生态的项目开发</HeadLine>
+          <HeadLine>勇于提升，乐于求知。</HeadLine>
           {/* </Flex> */}
         </IntroContainer>
       </Header>
@@ -50,11 +51,11 @@ const Header = styled(Flex)`
   /* background: #cccccc; */
   height: 100vh;
   width: 100vw;
-  padding: 24px 10vh;
+  padding: 24px 0;
   position: relative;
   align-items: center;
   justify-content: center;
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
 `;
 
 const IntroContainer = styled.div`
@@ -67,7 +68,11 @@ const HeadLine = styled.h1`
   /* width: 60%; */
   /* padding: 0 20%; */
   line-height: 1.5em;
-  text-align: center;
+  /* text-align: center; */
+
+  @media screen and (max-width: 600px) {
+    font-size: 20px;
+  }
 `;
 
 const Emphasize = styled.strong`
