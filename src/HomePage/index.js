@@ -6,6 +6,7 @@ import HeaderBG from "components/HeaderBG";
 import Projects from "./Projects";
 import SectionHeading from "components/SectionHeading";
 import Experiences from "./Experiences";
+import Footer from "./Footer";
 
 const Header = styled(Flex)`
   /* background: #cccccc; */
@@ -68,15 +69,15 @@ function HomePage() {
       </Header>
       <section>
         {/* <Flex d="column" align="center"> */}
-          <SectionHeading>作品</SectionHeading>
-          <Projects />
+        <SectionHeading>作品</SectionHeading>
+        <Projects />
         {/* </Flex> */}
       </section>
       <section>
         <SectionHeading>经历</SectionHeading>
-        <Experiences/>
+        <Experiences />
       </section>
-      <footer>footer</footer>
+      <Footer />
     </>
   );
 }
