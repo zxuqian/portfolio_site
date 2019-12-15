@@ -19,8 +19,8 @@ function Projects() {
         itemSelector: ".project-item",
         // layoutMode: "fitRows"
         masonry: {
-          columnWidth: 400
-          // fitWidth: true
+          columnWidth: ".project-item",
+          fitWidth: true
         }
       });
       isoRef.current = iso;

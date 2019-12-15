@@ -50,6 +50,7 @@ const TimeLineContainer = styled.div`
 
   @media screen and (max-width: 575px) {
     left: 0.5em;
+    right: -0.5em;
     padding-left: 1em;
     text-align: left;
     width: 100%;
