@@ -17,7 +17,11 @@ function Projects() {
       // initialize Isotope
       let iso = new Isotope(projectsRef.current, {
         itemSelector: ".project-item",
-        layoutMode: "fitRows"
+        // layoutMode: "fitRows"
+        masonry: {
+          columnWidth: 400
+          // fitWidth: true
+        }
       });
       isoRef.current = iso;
     }
@@ -59,11 +63,14 @@ function Projects() {
   );
 }
 
-const ProjectsContainer = styled(Flex)`
+const ProjectsContainer = styled.div`
   margin-top: 24px;
   max-width: 1240px;
-  width: 100%;
-  flex-wrap: wrap;
+  width: 100vw;
+  /* flex-wrap: wrap;
+  flex: 0 auto;
+  align-items: center;
+  justify-content: center; */
 `;
 
 export default Projects;

@@ -41,6 +41,10 @@ const ThumbNail = styled.div`
   width: 400px;
   height: 300px;
   background: #cccccc;
+
+  @media screen and (max-width: 400px) {
+    width: 100vw;
+  }
 `;
 
 const Title = styled.div`

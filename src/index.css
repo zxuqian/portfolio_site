@@ -12,6 +12,10 @@ body {
   min-height: 0; */
 }
 
+section {
+  max-width: 1240px;
+}
+
 section,
 footer {
   display: flex;

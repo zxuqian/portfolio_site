@@ -11,6 +11,10 @@ const StyledHeaderBG = styled.div`
   right: 0;
   height: 100vh;
   width: 100vw;
+
+  @media screen and (max-width: 1024px) {
+    height: 75vh;
+  }
 `;
 
 function HeaderBG({ ...rest }) {

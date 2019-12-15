@@ -7,6 +7,7 @@ import Projects from "./Projects";
 import SectionHeading from "components/SectionHeading";
 import Experiences from "./Experiences";
 import Footer from "./Footer";
+import AboutMe from "./AboutMe";
 
 function HomePage() {
   return (
@@ -23,7 +24,7 @@ function HomePage() {
             </nav>
           </Flex> */}
           {/* <Flex align="center" justify="center" d="column"> */}
-          <HeadLine>
+          <HeadLine style={{ marginTop: 0 }}>
             我是<Emphasize> 张旭乾</Emphasize>
           </HeadLine>
           <HeadLine>&lt;前端工程师 /&gt;</HeadLine>
@@ -32,16 +33,22 @@ function HomePage() {
           {/* </Flex> */}
         </IntroContainer>
       </Header>
-      <section>
-        {/* <Flex d="column" align="center"> */}
-        <SectionHeading>作品</SectionHeading>
-        <Projects />
-        {/* </Flex> */}
-      </section>
-      <section>
-        <SectionHeading>经历</SectionHeading>
-        <Experiences />
-      </section>
+      <Content>
+        <section>
+          <SectionHeading>关于我</SectionHeading>
+          <AboutMe />
+        </section>
+        <section>
+          {/* <Flex d="column" align="center"> */}
+          <SectionHeading>作品</SectionHeading>
+          <Projects />
+          {/* </Flex> */}
+        </section>
+        <section>
+          <SectionHeading>经历</SectionHeading>
+          <Experiences />
+        </section>
+      </Content>
       <Footer />
     </>
   );
@@ -56,6 +63,10 @@ const Header = styled(Flex)`
   align-items: center;
   justify-content: center;
   /* flex: 1 1 auto; */
+
+  @media screen and (max-width: 1024px) {
+    height: 75vh;
+  }
 `;
 
 const IntroContainer = styled.div`
@@ -71,7 +82,8 @@ const HeadLine = styled.h1`
   /* text-align: center; */
 
   @media screen and (max-width: 600px) {
-    font-size: 20px;
+    font-size: 1.6em;
+    text-align: center;
   }
 `;
 
@@ -89,6 +101,12 @@ const MenuItem = styled.li`
   :not(:last-child) {
     margin-right: 24px;
   }
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export default HomePage;
