@@ -17,6 +17,10 @@ const StyledTimeLine = styled.div`
     left: calc(50% - 2px);
     position: absolute;
     background: ${props => props.theme.main.light};
+
+    @media screen and (max-width: 575px) {
+      left: 1em;
+    }
   }
 `;
 
@@ -24,7 +28,7 @@ const TimeLineContainer = styled.div`
   /* background: #eeffff; */
   position: relative;
   width: 50%;
-  padding: 0px 20px;
+  padding: 0 0.5em;
 
   left: ${props => (props.left ? "0" : "calc(50% + 2px)")};
   text-align: ${props => (props.left ? "right" : "left")};
@@ -42,6 +46,18 @@ const TimeLineContainer = styled.div`
     border: 4px solid ${props => props.theme.main.primary};
     border-radius: 50%;
     z-index: 1;
+  }
+
+  @media screen and (max-width: 575px) {
+    left: 0.5em;
+    padding-left: 1em;
+    text-align: left;
+    width: 100%;
+    margin-top: 2em;
+
+    ::after {
+      left: 0;
+    }
   }
 `;
 
